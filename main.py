@@ -1,22 +1,20 @@
 class Parrot:
 
-    # class attribute
-    species = "bird"
-
-    # instance attribute
-    def __init__(self, name, age):
+    # instance attributes
+    def _init_(self, name, age):
         self.name = name
         self.age = age
 
-# instantiate the parrot class
-blu = Parrot("Blu", 10)
-woo = Parrot("Woo", 15)  
+    # instance method
+    def sing(self, song):
+        return "{} sings {}".format(self.name, song) 
 
-# access the class attributes
-print("Blu is a {}".format(blu.species))
-print("woo is also a {}".format(woo.species))
+    def dance(self):
+        return "{} is now dancing".format(self.name)
 
-# access the instance attributes
-print("{} is {} years old". format(blu.name, blu.age))
-print("{} is {} years old".format( woo.name, woo.age))
+# instantiate the object
+blu = Parrot("Blu", 10) 
 
+#call our instance methods 
+print(blu.song("'Happy'"))
+print(blu.dance())
